@@ -1,41 +1,40 @@
-import Head from 'next/head'
+import Head from 'next/head';
+import { PostCard, PostWidget, Categories } from '../components/';
 
 const posts = [
   {
     title: 'React Testing',
-    excerpt: 'Learn React Testing.'
+    excerpt: 'Learn React Testing.',
   },
   {
     title: 'React with Tailwind',
-    excerpt: 'Learn React with Tailwind.'
+    excerpt: 'Learn React with Tailwind.',
   },
-]
+];
 
 export default function Home() {
   return (
-    <div className="container mx-auto px-10 mb-8">
+    <div className='container mx-auto px-10 mb-8'>
       <Head>
         <title>Bregacode Blog</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel='icon' href='/favicon.ico' />
       </Head>
       <div className='grid grid-cols-1 lg:grid-cols-12 gap-12'>
-        <div>
-
-        {
-          posts.map((post, index) => (
-            <div key={index}>
-             {post.title}
-            {post.excerpt}
-             
-            </div>
-
-          ))
-        }
+        <div className='lg:col-span-8 col-span-1'>
+          {posts.map((post, index) => (
+            <PostCard key={index} post={post}>
+              {post.title}
+              {post.excerpt}
+            </PostCard>
+          ))}
         </div>
-        <div className='lg:cols-span-4 cols-span-1'>
-
+        <div className='lg:col-span-4 col-span-1'>
+          <div className='lg:sticky relative top-8'>
+            <PostWidget />
+            <Categories />
+          </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
