@@ -1,4 +1,5 @@
 import Head from 'next/head';
+
 import { PostCard, PostWidget, Categories } from '../components/';
 
 const posts = [
