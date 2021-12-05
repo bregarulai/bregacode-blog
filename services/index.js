@@ -8,6 +8,10 @@ export const getPosts = async () => {
       postsConnection {
         edges {
           node {
+            createdAt
+            slug
+            title
+            excerpt
             author {
               id
               name
@@ -16,16 +20,13 @@ export const getPosts = async () => {
                 url
               }
             }
-            createdAt
-            slug
-            title
-            excerpt
-            featuredImage {
-              url
-            }
             categories {
               name
               slug
+            }
+            featuredImage {
+              url
+              createdAt
             }
           }
         }
