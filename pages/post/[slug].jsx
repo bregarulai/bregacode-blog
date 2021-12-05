@@ -10,7 +10,8 @@ import {
   CommentsForm,
 } from '../../components';
 
-const PostDetails = () => {
+const PostDetails = ({ post }) => {
+  console.log('POST DATA: ', post);
   return (
     <div className='container mx-auto px-10 mb-8'>
       <div className='grid grid-cols-1 lg:grid-cols-12 gap-12'>
@@ -32,3 +33,13 @@ const PostDetails = () => {
 };
 
 export default PostDetails;
+
+export async function getStaticProps({ params }) {
+  const post = await getPostsDetails(params.slug);
+
+  return {
+    props: {
+      post,
+    },
+  };
+}
