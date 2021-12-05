@@ -44,7 +44,13 @@ const CommentsForm = ({ slug }) => {
         <p className='text-xs text-red-500'>All fields are required.</p>
       )}
       <div className='mt-8'>
-        <button type='button' onClick={handleCommentSubmit}></button>
+        <button
+          type='button'
+          onClick={handleCommentSubmit}
+          className='transition duration-500 ease-linear hover:bg-indigo-900 inline-block bg-pink-600 text-lg rounded-full text-white px-8 py-3 cursor-pointer'
+        >
+          Post comment
+        </button>
       </div>
     </div>
   );
