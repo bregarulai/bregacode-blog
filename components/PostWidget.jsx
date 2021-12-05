@@ -17,7 +17,13 @@ const PostWidget = ({ categories, slug }) => {
     }
   }, []);
   console.log('RELATED POSTS: ', relatedPosts);
-  return <div>Post widget</div>;
+  return (
+    <div className='bg-white shadow-lg rounded-lg p-8 mb-8'>
+      <h3 className='text-xl mb-8 font-semibold border-b pb-4'>
+        {slug ? 'Related Posts' : 'Recent Posts'}
+      </h3>
+    </div>
+  );
 };
 
 export default PostWidget;
